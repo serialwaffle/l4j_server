@@ -8,6 +8,7 @@ from pwn import *
 
 log.info("Log4Shell POC server")
 log.info("By: serialwaffle")
+log.info("https://github.com/serialwaffle/l4j_server")
 
 if len(sys.argv) != 3:
 	log.info("Duh, your not using me right....")
