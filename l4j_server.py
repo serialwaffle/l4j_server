@@ -11,7 +11,7 @@ log.info("By: serialwaffle")
 
 if len(sys.argv) != 3:
 	log.info("Duh, your not using me right....")
-	print("\n python3 log4j_Server.py <callback_ip:callback_port> <HTTP_server_port> \n")
+	print("\n python3 log4j_server.py <callback_ip:callback_port> <HTTP_server_port> \n")
 	exit()
 
 
