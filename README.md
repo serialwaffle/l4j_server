@@ -1,7 +1,7 @@
 
 
 # l4j_server 
-l4j_server is a lightweight, standalone server to be used a POC for the L4J vulnerability associated with Log4Shell (CVE-2021-2448)    
+l4j_server is a lightweight, standalone server to be used a POC for the L4J vulnerability associated with Log4Shell (CVE-2021-22448)    
 
 
 
