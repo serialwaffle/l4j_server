@@ -10,6 +10,11 @@ l4j_server is a lightweight, standalone server to be used a POC for the L4J vuln
 
 ![l4j_server in action](https://raw.githubusercontent.com/serialwaffle/l4j_server/main/l4j_server.png)
 
+
+## Dependencies
+ pip install pwntools
+
+
 ## Installation
 ```
 git clone https://github.com/serialwaffle/l4j_server.git
@@ -21,7 +26,7 @@ https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html
 
 
 
-Untar in git Repo directory
+Untar jdk in l4j_server repo directory
 ```
 tar -xvf jdk-8u202-linux-x64.tar.gz
 ```
