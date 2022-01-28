@@ -4,11 +4,26 @@
 l4j_server is a lightweight, standalone server to be used a POC for the L4J vulnerability associated with Log4Shell (CVE-2021-22448)    
 
 
+## Screenshot
+
+
+
+![l4j_server in action](https://raw.githubusercontent.com/serialwaffle/l4j_server/main/l4j_server.png)
 
 ## Installation
 ```
 git clone https://github.com/serialwaffle/l4j_server.git
-tar -xvf jdk-8u202-linux-x64.tar
+```
+
+Download **jdk-8u202-linux-x64.tar.gz** from:
+
+https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html
+
+
+
+Untar in git Repo directory
+```
+tar -xvf jdk-8u202-linux-x64.tar.gz
 ```
 
 ## Usage
