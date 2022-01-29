@@ -77,7 +77,12 @@ def main():
 	make_payload()
 	tLDAP = threading.Thread(target=LDAPSvr,args=())
 	tLDAP.start()
-	HTTPSvr()
+	try:
+		HTTPSvr()
+	except KeyboardInterrupt:
+		log.info("See You Space Cowboy...")
+		exit()
+	
 	
 
 
