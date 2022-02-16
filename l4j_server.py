@@ -80,7 +80,7 @@ def main():
 	try:
 		HTTPSvr()
 	except KeyboardInterrupt:
-		log.info("See You Space Cowboy...")
+		log.info("Bye!")
 		exit()
 	
 	
