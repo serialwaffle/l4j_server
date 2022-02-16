@@ -49,8 +49,8 @@ nc -lnvp <callback_port>
 
 
 ## Support 
-If you appreciate my work and HackTheBox, feel free to give me some respect and check out my article on my climb to Guru:  
+If you appreciate my work and HackTheBox, feel free to give me some respect:  
 
 <a href="https://www.hackthebox.eu/profile/5305"><img src="https://www.hackthebox.eu/badge/image/5305" width="150"></a>
 
-<a href="https://medium.com/@serialwaffle/my-climb-to-guru-on-hackthebox-fde42f9cc574">My Climb to Guru on HackTheBox</a>
+
